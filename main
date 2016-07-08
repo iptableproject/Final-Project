@@ -188,3 +188,8 @@ service iptables stop
 service iptables start
 service iptables restart
 
+
+^^^^^^^^^^^^^^^^^^^^^^^^^مهدوی&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& 
+
+ایجاد امکان دسترسی به شبکه خارجیeth1 از شبکه داخلی eth0
+iptables -A FORWARD -i eth0 -o eth1 -j ACCEPT
