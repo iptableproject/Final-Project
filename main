@@ -163,3 +163,11 @@ iptables -A INPUT -i eth0 -p tcp --sport 443 -m state --state ESTABLISHED -j ACC
 iptables -A INPUT -i lo -j ACCEPT
 iptables -A OUTPUT -o lo -j ACCEPT
 
+^^^^^^^^^^^^^^^^^^^^^^^^^مهدوی&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& 
+ایجاد امکانping از داخل به خارج
+iptables -A OUTPUT -p icmp --icmp-type echo-request -j ACCEPT
+iptables -A INPUT -p icmp --icmp-type echo-reply -j ACCEPT
+ایجاد امکانping از خارج به داخل
+iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
+iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
+
