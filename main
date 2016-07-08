@@ -146,4 +146,9 @@ iptables -A OUTPUT -o eth0 -p tcp -m multiport --sports 22,80,443 -m state --sta
 iptables -A OUTPUT -o eth0 -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
 iptables -A INPUT -i eth0 -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
 
+////////////////////////////////////////////مهدوی 
+
+باز کردن پورت خروجی ssh تنها برای یک شبکه خاص
+iptables -A OUTPUT -o eth0 -p tcp -d 192.168.101.0/24 --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+iptables -A INPUT -i eth0 -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
 
