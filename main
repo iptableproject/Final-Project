@@ -210,3 +210,12 @@ service iptables stop
 service iptables start
 service iptables restart
 
+
+%%%%%%%%%%%%%%%%مهدوی &&&&&&&&&&&&&&&&&&&&&
+حذف قوانین و رول های فایروال 
+ابتدا به کمک دستورات زیر شماره خط رول را بدست آورید
+iptables -L INPUT -n –line-numbers
+iptables -L OUTPUT -n –line-numbers
+iptables -L OUTPUT -n –line-numbers | less
+iptables -L OUTPUT -n –line-numbers | grep 202.54.1.1
+
