@@ -177,3 +177,14 @@ iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
 iptables -A OUTPUT -p udp -o eth0 --dport 53 -j ACCEPT
 iptables -A INPUT -p udp -i eth0 --sport 53 -j ACCEPT
 
+
+@@@@@@@@@@@@@@@@@@@@@@@@میرلوحی *************************************
+
+ذخیره تغییرات iptables
+service iptables save
+تغییر وضعیت فایروال 
+از دستورات زیر برای روشن ، خاموش و ریست فایروال می توان استفاده کرد
+service iptables stop
+service iptables start
+service iptables restart
+
