@@ -193,3 +193,9 @@ service iptables restart
 
 ایجاد امکان دسترسی به شبکه خارجیeth1 از شبکه داخلی eth0
 iptables -A FORWARD -i eth0 -o eth1 -j ACCEPT
+
+%%%%%%%%%%%%%%%%مهدوی &&&&&&&&&&&&&&&&&&&&&
+
+اگر می خواهید فایروال را خاموش و پس از ریستارت سرور نیز وضعیت به همین منوال باقی بمانید ، دستور زیر را وارد نمائید:
+service iptables stop
+chkconfig iptables off
