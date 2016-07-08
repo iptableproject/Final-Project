@@ -219,3 +219,10 @@ iptables -L OUTPUT -n –line-numbers
 iptables -L OUTPUT -n –line-numbers | less
 iptables -L OUTPUT -n –line-numbers | grep 202.54.1.1
 
+
+%%%%%%%%%%%%%%%%مهدوی &&&&&&&&&&&&&&&&&&&&&
+
+حال به عنوان مثال برای حذف رول موجود در خط شماره ۴ می توانید از دستور زیر استفاده فرمائید:
+iptables -D INPUT 4
+و یا از دستور زیر برای حذف قوانین مروبطه به ای پی مورد نظر خود استفاده فرمایید
+iptables -D INPUT -s 202.54.1.1 -j DROP
