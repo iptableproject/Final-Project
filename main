@@ -119,16 +119,7 @@ iptables –F
 iptables -t nat –F
 
 
-حذف رول های مربوط به جدول MANGLE 
-iptables -t mangle -F
-
-
-
-
-ایجاد تنظیمات عمومی و مسدود کردن همه دسترسی ها
-iptables -P INPUT DROP
-iptables -P FORWARD DROP
-iptables -P OUTPUT DROP
-مسدود کردن یک ip خاص
-iptables -A INPUT -s xxx.xxx.xxx.xxx -j DROP
-
+/*/*/*************************میر لوحی*////////////////////
+باز کردن پورت SSH برای تمامی ارتباطات ورودی
+iptables -A INPUT -i eth0 -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+iptables -A OUTPUT -o eth0 -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
