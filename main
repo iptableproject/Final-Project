@@ -123,3 +123,11 @@ iptables -t nat –F
 باز کردن پورت SSH برای تمامی ارتباطات ورودی
 iptables -A INPUT -i eth0 -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
 iptables -A OUTPUT -o eth0 -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
+
+
+********************************mahdavi **************************
+باز کردن پورت ssh برای یک ip  یا رنج ip خاص
+iptables -A INPUT -i eth0 -p tcp -s xxx.xxx.xxx.xxx/24 --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+iptables -A INPUT -i eth0 -p tcp -s xxx.xxx.xxx.xxx --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+iptables -A OUTPUT -o eth0 -p tcp --sport 22 -m state --state ESTABLISHED -j ACCEPT
+
