@@ -199,3 +199,14 @@ iptables -A FORWARD -i eth0 -o eth1 -j ACCEPT
 اگر می خواهید فایروال را خاموش و پس از ریستارت سرور نیز وضعیت به همین منوال باقی بمانید ، دستور زیر را وارد نمائید:
 service iptables stop
 chkconfig iptables off
+
+@@@@@@@@@@@@@@@@@@@@@@@@میرلوحی *************************************
+
+ذخیره تغییرات iptables
+service iptables save
+تغییر وضعیت فایروال 
+از دستورات زیر برای روشن ، خاموش و ریست فایروال می توان استفاده کرد
+service iptables stop
+service iptables start
+service iptables restart
+
